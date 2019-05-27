@@ -204,6 +204,9 @@ class Translations {
   String it;
   String br;
   String pt;
+  String nl;
+  String hr;
+  String fa;
 
   Translations({
     this.de,
@@ -213,6 +216,9 @@ class Translations {
     this.it,
     this.br,
     this.pt,
+    this.nl,
+    this.hr,
+    this.fa,
   });
 
   factory Translations.fromJson(Map<String, dynamic> json) => new Translations(
@@ -223,6 +229,9 @@ class Translations {
     it: json["it"],
     br: json["br"],
     pt: json["pt"],
+    nl: json["nl"],
+    hr: json["hr"],
+    fa: json["fa"],
   );
 
   Map<String, dynamic> toJson() => {
@@ -233,5 +242,8 @@ class Translations {
     "it": it,
     "br": br,
     "pt": pt,
+    "nl": nl,
+    "hr": hr,
+    "fa": fa,
   };
 }
