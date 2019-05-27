@@ -1,4 +1,5 @@
 
+import 'package:demo_meetup/src/api/apiCalls.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -11,6 +12,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   int _counter = 0;
+  final ApiCalls apiCalls = ApiCalls();
 
   void _incrementCounter() {
     setState(() {

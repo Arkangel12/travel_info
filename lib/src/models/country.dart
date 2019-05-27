@@ -19,9 +19,9 @@ class Country {
   String region;
   String subregion;
   int population;
-  List<int> latlng;
+  List<double> latlng;
   String demonym;
-  int area;
+  double area;
   double gini;
   List<String> timezones;
   List<String> borders;
@@ -72,10 +72,10 @@ class Country {
     region: json["region"],
     subregion: json["subregion"],
     population: json["population"],
-    latlng: new List<int>.from(json["latlng"].map((x) => x)),
+    latlng: new List<double>.from(json["latlng"].map((x) => x)),
     demonym: json["demonym"],
     area: json["area"],
-    gini: json["gini"].toDouble(),
+    gini: json["gini"],
     timezones: new List<String>.from(json["timezones"].map((x) => x)),
     borders: new List<String>.from(json["borders"].map((x) => x)),
     nativeName: json["nativeName"],
