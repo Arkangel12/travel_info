@@ -18,7 +18,7 @@ class DetailsScreen extends StatefulWidget {
 }
 
 class _DetailsScreenState extends State<DetailsScreen> {
-  String translate = '';
+  String translate = ' ';
 
   @override
   Widget build(BuildContext context) {
