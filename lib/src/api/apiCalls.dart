@@ -1,6 +1,4 @@
 
-import 'dart:convert';
-
 import 'package:demo_meetup/src/models/country.dart';
 import 'package:demo_meetup/src/models/localization.dart';
 import 'package:demo_meetup/src/models/localizationSearch.dart';
@@ -32,7 +30,4 @@ class ApiCalls {
     else return null;
 
   }
-
-
-
 }
