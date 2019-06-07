@@ -24,7 +24,6 @@ class _DetailsScreenState extends State<DetailsScreen> {
   Widget build(BuildContext context) {
     Country country = widget.country;
     double width = MediaQuery.of(context).size.width;
-    print(country.flag);
     return Column(
       children: <Widget>[
         centerInColumn(
