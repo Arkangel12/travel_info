@@ -75,19 +75,19 @@ class _HomePageState extends State<HomePage> {
           ),
           Positioned(
             bottom: 0,
-            child: GestureDetector(
-              onVerticalDragUpdate: (val) {
-                setState(() => _bottomSize = _screenHeight - val.globalPosition.dy);
-              },
-              child: AnimatedContainer(
-                duration: Duration(milliseconds: 100),
-                width: MediaQuery.of(context).size.width,
-                height: _bottomSize,
-                constraints: BoxConstraints(
-                    minHeight: _defaultBottomSize,
-                    maxHeight: _screenHeight * 0.85,
-                ),
-                child: Container(
+            child: Container(
+              child: GestureDetector(
+                onVerticalDragUpdate: (val) {
+                  setState(() => _bottomSize = _screenHeight - val.globalPosition.dy);
+                },
+                child: AnimatedContainer(
+                  duration: Duration(milliseconds: 100),
+                  width: MediaQuery.of(context).size.width,
+                  height: _bottomSize,
+                  constraints: BoxConstraints(
+                      minHeight: _defaultBottomSize,
+                      maxHeight: _screenHeight * 0.85,
+                  ),
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.only(
@@ -95,22 +95,29 @@ class _HomePageState extends State<HomePage> {
                       topRight: Radius.circular(25),
                     ),
                   ),
-                  child: SingleChildScrollView(
-                    child: Column(
-                      children: <Widget>[
-                        Container(
-                          width: 50,
-                          height: 5,
-                          margin: EdgeInsets.only(top: 10),
-                          alignment: Alignment.center,
-                          decoration: BoxDecoration(
-                            color: Colors.blueGrey[200],
-                            borderRadius: BorderRadius.all(Radius.circular(5)),
+                  child: Column(
+                    children: <Widget>[
+                      Container(
+                        width: 50,
+                        height: 5,
+                        margin: EdgeInsets.symmetric(vertical: 10),
+                        alignment: Alignment.center,
+                        decoration: BoxDecoration(
+                          color: Colors.blueGrey[200],
+                          borderRadius: BorderRadius.all(Radius.circular(5)),
+                        ),
+                      ),
+                      Expanded(
+                        child: SingleChildScrollView(
+                          child: Column(
+                            children: <Widget>[
+                              ...details
+                            ],
                           ),
                         ),
-                        ...details,
-                      ],
-                    ),
+                      )
+                      //...details,
+                    ],
                   ),
                 ),
               ),
