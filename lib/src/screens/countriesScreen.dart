@@ -18,9 +18,9 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   final ApiCalls apiCalls = ApiCalls();
   double _screenHeight;
-  double _bottomSize = 60;
-  double _defaultBottomSize = 60;
-  List details = [];
+  double _bottomSize = 80;
+  double _defaultBottomSize = 80;
+  List<Widget> details = [];
   String translate = '';
 
   Completer<GoogleMapController> _controller = Completer();
@@ -73,57 +73,59 @@ class _HomePageState extends State<HomePage> {
               }
             },
           ),
-          Positioned(
-            bottom: 0,
-            child: Container(
-              child: GestureDetector(
-                onVerticalDragUpdate: (val) {
-                  setState(() => _bottomSize = _screenHeight - val.globalPosition.dy);
-                },
-                child: AnimatedContainer(
-                  duration: Duration(milliseconds: 100),
-                  width: MediaQuery.of(context).size.width,
-                  height: _bottomSize,
-                  constraints: BoxConstraints(
-                      minHeight: _defaultBottomSize,
-                      maxHeight: _screenHeight * 0.85,
-                  ),
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(25),
-                      topRight: Radius.circular(25),
-                    ),
-                  ),
-                  child: Column(
-                    children: <Widget>[
-                      Container(
-                        width: 50,
-                        height: 5,
-                        margin: EdgeInsets.symmetric(vertical: 10),
-                        alignment: Alignment.center,
-                        decoration: BoxDecoration(
-                          color: Colors.blueGrey[200],
-                          borderRadius: BorderRadius.all(Radius.circular(5)),
-                        ),
-                      ),
-                      Expanded(
-                        child: SingleChildScrollView(
-                          child: Column(
-                            children: <Widget>[
-                              ...details
-                            ],
-                          ),
-                        ),
-                      )
-                      //...details,
-                    ],
-                  ),
-                ),
+          countryDetail()
+        ],
+      ),
+    );
+  }
+
+  countryDetail(){
+    return Positioned(
+      bottom: 0,
+      child: Container(
+        child: GestureDetector(
+          onVerticalDragUpdate: (val) {
+            setState(() => _bottomSize = _screenHeight - val.globalPosition.dy);
+          },
+          child: AnimatedContainer(
+            duration: Duration(milliseconds: 100),
+            width: MediaQuery.of(context).size.width,
+            height: _bottomSize,
+            constraints: BoxConstraints(
+              minHeight: _defaultBottomSize,
+              maxHeight: _screenHeight * 0.85,
+            ),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(25),
+                topRight: Radius.circular(25),
               ),
             ),
-          )
-        ],
+            child: Column(
+              children: <Widget>[
+                Container(
+                  width: 50,
+                  height: 5,
+                  margin: EdgeInsets.symmetric(vertical: 10),
+                  alignment: Alignment.center,
+                  decoration: BoxDecoration(
+                    color: Colors.blueGrey[200],
+                    borderRadius: BorderRadius.all(Radius.circular(5)),
+                  ),
+                ),
+                Expanded(
+                  child: SingleChildScrollView(
+                    child: Column(
+                      children: details,
+                    ),
+                  ),
+                )
+                //...details,
+              ],
+            ),
+          ),
+        ),
       ),
     );
   }
