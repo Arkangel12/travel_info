@@ -57,7 +57,7 @@ class _HomePageState extends State<HomePage> {
                         onTap: () {
                           setState(() {
                             details.clear();
-                            _bottomSize = _screenHeight * .6;
+                            _bottomSize = _screenHeight * .5;
 //                            getDetails(country);
                             details.add(DetailsScreen(country: country));
                           });
