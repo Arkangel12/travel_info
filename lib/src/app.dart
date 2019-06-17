@@ -8,7 +8,6 @@ class Demo extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData.light(),
-      darkTheme: ThemeData.dark(),
       home: HomePage(title: 'Flutter Demo'),
     );
   }
