@@ -1,6 +1,8 @@
-# demo_meetup
+# Setup Importante
 
-A new Flutter project.
+Para poder hacer uso de los Mapas de Google deberan generar su propia API Key en [Google API Console](https://console.developers.google.com/apis/credentials) y utilizar el procedimiento que se encuentra en [Google Maps Plugin](https://pub.dev/packages/google_maps_flutter) en la carpeta de iOS y Android, todo los pasos viene detallados ahi.
+
+De requerir mayor detalle pueden contactarme por Twitter en mi cuenta [ArkangelB](https://twitter.com/ArkangelB) o bien pueden tambien preguntar en nuestro grup de Facebook [Flutter y Dart en Español](https://www.facebook.com/groups/flutter.dart.spanish/)
 
 ## Getting Started
 
